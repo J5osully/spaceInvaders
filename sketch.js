@@ -32,9 +32,10 @@ function Ship(){
   this.draw = function(){
     push();
     noStroke();
-    fill(100,0,100);
+    fill(10,250,200);//rectangle color is teal
     rectMode(CENTER);
     rect(this.xPos, this.yPos, this.size, this.size);
+    fill(100,0,100);//triangle color is purple
     triangle(this.xPos - this.size, this.yPos + this.size, 
         this.xPos + this.size, this.yPos + this.size, 
         this.xPos + 0, this.yPos - this.size);
