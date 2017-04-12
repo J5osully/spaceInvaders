@@ -35,7 +35,7 @@ function Ship(){
     noStroke();
     fill(100,0,100);
     rectMode(CENTER);
-   triangle(300, 595, 320, 595, 310, 575);
+    rect(this.xPos, this.yPos, this.xSize, this.ySize);
     pop();
   }
 
