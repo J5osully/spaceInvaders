@@ -18,24 +18,27 @@ function draw() {
 
   strokeWeight(2);
   stroke(0,255,0);
-  point(width/2,height/2)
+  point(width/2,height/2); // point in screen center
 }
 
 
 
 //ship object constructor
 function Ship(){
-  this.xSize = 30;
-  this.ySize = 30;
+  this.size = 20;
   this.xPos = width/2;
-  this.yPos = height/1.02;
+  this.yPos = height/2;//1.02;
   
   this.draw = function(){
     push();
     noStroke();
     fill(100,0,100);
     rectMode(CENTER);
-    rect(this.xPos, this.yPos, this.xSize, this.ySize);
+    rect(this.xPos, this.yPos, this.size, this.size);
+    triangle(this.xPos - this.size, this.yPos + this.size, 
+        this.xPos + this.size, this.yPos + this.size, 
+        this.xPos + 0, this.yPos - this.size);
+   
     pop();
   }
 
