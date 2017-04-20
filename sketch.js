@@ -1,7 +1,7 @@
 /*
     -Create Ship
       x-Move with keyboard
-      -Don't move off screen
+      x-Don't move off screen
       x-Create ship art
     -Create enemies
       -Create an object for enemies
@@ -53,7 +53,7 @@ function draw() {
 function Ship(){
   this.size = 20;
   this.xPos = width/2;
-  this.yPos = height/2;//1.02;
+  this.yPos = height - this.size * 3;
   
   this.draw = function(){
     push();
