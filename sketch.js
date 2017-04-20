@@ -1,3 +1,29 @@
+/*
+    -Create Ship
+      x-Move with keyboard
+      -Don't move off screen
+      x-Create ship art
+    -Create enemies
+      -Create an object for enemies
+      -Create art for enemies
+      -Create array for enemy objects
+      -Add motion to enemies
+      -Enable shooting from enemies
+    -Create gun/ shooting mechanic
+      -Shoot with spacebar
+      -Create array to hold all bullets on screen.
+      -Delete bullets from array when they go off screen.
+      -Detect collisions between bullets and enemies.
+    -General
+      -create game hud
+      -display lives
+      -Score
+      -display when dead
+
+
+
+
+*/
 var myShip;
 
 
