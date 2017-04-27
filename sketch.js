@@ -25,14 +25,17 @@
 
 */
 var myShip;
-var myEnemy;
+var myEnemies = [];
 
 function setup() {
     createCanvas(600, 600);
     stroke(255);     // Set line drawing color to white
     frameRate(30);
     myShip = new Ship();
-    myEnemy = new Enemy(width/2, 0 + 50);
+  myEnemies.push( new Enemy(width/2, 0 + 50));
+  myEnemies.push( new Enemy(width/4, 0 + 50));
+  myEnemies.push( new Enemy(width/6, 0 + 50));
+  myEnemies.push( new Enemy(width/8, 0 + 50));
 }
 
 function draw() {
@@ -42,7 +45,10 @@ function draw() {
 
   keyInput();//evaluate keyboard control
   myShip.draw();
-  myEnemy.draw();
+  for (let i = 0; i < myEnemies.length; i++ ){
+    myEnemies[i].draw();
+    //myEnemies[i].move(2);
+  }
 
   strokeWeight(2);
   stroke(0,255,0);
