@@ -1,19 +1,23 @@
 //Enemy object constructor
-function Enemy(){
+function Enemy(xPos,yPos){
   this.size = 20;
-  this.xPos = width/2;
-  this.yPos = height - this.size * 3;
+  this.xPos = xPos;
+  this.yPos = yPos;
   
   this.draw = function(){
     push();
     noStroke();
-    fill(10,250,200);//rectangle color is teal
-    rectMode(CENTER);
-    rect(this.xPos, this.yPos, this.size, this.size);
-    fill(100,0,100);//triangle color is purple
-    triangle(this.xPos - this.size, this.yPos + this.size, 
-        this.xPos + this.size, this.yPos + this.size, 
-        this.xPos + 0, this.yPos - this.size);
+    fill(10,250,200);//triangle 1 color is teal
+     
+    triangle(this.xPos + this.size, this.yPos - this.size, 
+        this.xPos - this.size, this.yPos - this.size, 
+        this.xPos - 0, this.yPos + this.size);
+    
+    fill(0,100,200);//triangle 2 color is blue
+    
+    triangle(this.xPos - this.size/2, this.yPos + this.size/2, 
+        this.xPos + this.size/2, this.yPos + this.size/2, 
+        this.xPos + 0, this.yPos - this.size/2);
    
     pop();
   }

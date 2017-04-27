@@ -32,7 +32,7 @@ function setup() {
     stroke(255);     // Set line drawing color to white
     frameRate(30);
     myShip = new Ship();
-    myEnemy = new Enemy();
+    myEnemy = new Enemy(width/2, 0 + 50);
 }
 
 function draw() {
