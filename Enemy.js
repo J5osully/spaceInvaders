@@ -22,15 +22,16 @@ function Enemy(xPos,yPos){
     pop();
   }
 
-  this.move = function(xStep){
+  this.move = function(xStep, yStep){
     if (this.xPos + xStep <= 0 + this.size) {
       this.xPos = 0 + this.size;
     } else if (this.xPos + xStep >= width - this.size) {
       this.xPos = width - this.size;
     } else {
-       this.xPos =  this.xPos + xStep;
+       this.xPos = this.xPos + xStep; 
     }
-   
+    
+    this.yPos = this.yPos + yStep;
 
   }
 } // Enemy constructor

@@ -32,10 +32,9 @@ function setup() {
     stroke(255);     // Set line drawing color to white
     frameRate(30);
     myShip = new Ship();
-  myEnemies.push( new Enemy(width/2, 0 + 50));
-  myEnemies.push( new Enemy(width/4, 0 + 50));
-  myEnemies.push( new Enemy(width/6, 0 + 50));
-  myEnemies.push( new Enemy(width/8, 0 + 50));
+  
+    createEnemies(myEnemies);
+  
 }
 
 function draw() {
@@ -47,7 +46,7 @@ function draw() {
   myShip.draw();
   for (let i = 0; i < myEnemies.length; i++ ){
     myEnemies[i].draw();
-    //myEnemies[i].move(2);
+    //myEnemies[i].move(2,10);
   }
 
   strokeWeight(2);
@@ -74,4 +73,17 @@ function keyInput(){
         
       }
    }
+}
+
+function createEnemies(enemyArray){
+  var numRows = 2;
+  var numColums = 3;
+  var yTop = 50;
+  var xLeft = 50;
+  var xSpacing = (width - 1*xLeft)/numColums;
+
+  
+  for (let i = 0; i < numColums; i++){
+    enemyArray.push( new Enemy(xLeft + xSpacing*i, 0 + yTop));
+  }
 }
