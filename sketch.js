@@ -76,14 +76,16 @@ function keyInput(){
 }
 
 function createEnemies(enemyArray){
-  var numRows = 2;
+  var numRows = 3;
   var numColums = 3;
   var yTop = 50;
   var xLeft = 50;
   var xSpacing = (width - 1*xLeft)/numColums;
-
+  var ySpacing = (height - 1*yTop)/numRows;
   
+  for (let j = 0; j < numRows; j++){
   for (let i = 0; i < numColums; i++){
-    enemyArray.push( new Enemy(xLeft + xSpacing*i, 0 + yTop));
+    enemyArray.push( new Enemy(xLeft + xSpacing*i, yTop + ySpacing*j));
   }
+}
 }
