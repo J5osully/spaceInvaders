@@ -4,9 +4,9 @@
       x-Don't move off screen
       x-Create ship art
     -Create enemies
-      -Create an object for enemies
-      -Create art for enemies
-      -Create array for enemy objects
+      x-Create an object for enemies
+      x-Create art for enemies
+      x-Create array for enemy objects
       -Add motion to enemies
       -Enable shooting from enemies
     -Create gun/ shooting mechanic
@@ -26,6 +26,7 @@
 */
 var myShip;
 var myEnemies = [];
+var myBullets = [];
 
 function setup() {
     createCanvas(600, 600);
@@ -35,6 +36,7 @@ function setup() {
     myShip = new Ship();
   
     createEnemies(myEnemies);
+    createBullet(myBullets, 100, 500);
   
 }
 
@@ -49,7 +51,10 @@ function draw() {
     myEnemies[i].draw();
     //myEnemies[i].move(2,10);
   }
+  moveBullets(myBullets, -5)
+  drawBullets(myBullets);
 
+  // Point in center of screen
   strokeWeight(2);
   stroke(0,255,0);
   point(width/2,height/2); // point in screen center
@@ -91,4 +96,25 @@ function createEnemies(enemyArray){
     enemyArray.push( new Enemy(xLeft + xSpacing*i, yTop + ySpacing*j));
   }
 }
+}
+
+function createBullet(bulletArray, xPos, yPos){
+  bulletArray.push([xPos, yPos]);
+}
+
+function drawBullets(bulletArray){
+  for (let i = 0; i < bulletArray.length; i++){
+    //bulletArray[i][0] is xPos and bulletArray[i][1] is yPos
+    strokeWeight(5);
+    stroke(255,0,0);
+    point(bulletArray[i][0], bulletArray[i][1]); // point in screen center
+      
+  }
+}
+
+function moveBullets(bulletArray, yStep){
+  for (let i = 0; i < bulletArray.length; i++){
+    //bulletArray[i][0] is xPos and bulletArray[i][1] is yPos
+    bulletArray[i][1] = bulletArray[i][1] + yStep;
+  }
 }
